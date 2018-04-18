@@ -42,4 +42,5 @@ print ('world')
 print('Hello', 'World')
 print('Hello','World',sep=',')
 
-
+## [] Lists- mutable
+## () tuple - these are immutable 
