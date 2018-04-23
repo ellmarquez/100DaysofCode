@@ -1,7 +1,8 @@
 print('How much was your bill?' )
 bill=float(input())
-print('How much would you like to tip?')
-tip=.15
+print('What percentage would you like to tip?')
+tip=float(input)
+tipper=tip.strip("%")
 split=3
 
 total= bill + (bill*tip)

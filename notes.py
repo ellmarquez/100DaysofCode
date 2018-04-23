@@ -44,3 +44,5 @@ print('Hello','World',sep=',')
 
 ## [] Lists- mutable
 ## () tuple - these are immutable 
+copy.copy() ## duplicate copy of a mutable value like a list or dictionary
+copy.deepcopy() ##will do a deep copy of a list by duplicating any list inside the list

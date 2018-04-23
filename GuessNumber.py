@@ -1,16 +1,20 @@
 import random
-number=random.randint(1,10)
 print ("Hello, what is your name?")
-name=input()
+person=input()
 
-print ('Hello,' +name, "I am thinking of a number from 1-10, can you guess it?")
-guess=int(input())
+number=random.randint(1,10)
+print ('Hello,' ,person, 'I am thinking of a number from 1-10.')
 
-if guess==number:
-      print ("yaya! you got it right!")
-elif guess > number:
+for guess in range (1,5):
+    print('Why don\'t you take a guess?')
+    guess= int(input())
+    if guess > number:
      print ("To big!")
-elif guess < number:
-    print("To small!")
+    elif guess < number:
+     print("To small!")
+    else:break
 
-print ('Thanks for playing')
+if guess ==number:        
+    print ('Thats it! Thanks for playing')
+else: 
+    print('Better luck next time!')
