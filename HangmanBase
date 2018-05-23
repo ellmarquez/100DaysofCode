@@ -1,0 +1,21 @@
+#! /usr/local/bin/python3
+import os
+turns=0 
+
+word= input ("Player 1: Please enter the word!").lower()
+lw= len(word)
+#os.system('clear')
+
+print("The word has " + str(lw) + " letters.")
+for x in range (0,5):
+    guess = input ("Player 2: You can now guess the word or guess a Letter. \n What is your guess?").lower()
+    if guess == word:
+        print ("yaya you win!")
+        break
+    elif len(guess) > 1:
+        print (guess + " is not the right word.")
+    elif guess in (word):
+        print (guess + " is in the word!")
+    else:
+        print ("Sorry " +guess +" is not in the word" )
+            
