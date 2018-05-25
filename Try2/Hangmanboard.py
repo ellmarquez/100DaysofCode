@@ -18,6 +18,7 @@ def head():
     |
     |
     =======
+    You have 5 chances left. 
     """)
 
 def body():
@@ -28,36 +29,40 @@ def body():
     |
     |
     =======
+    You have 4 chances left.
     """)
 
 def rarm():
  print ("""
     +---+
     |   O
-    |  \|
+    |   |/
     |
     |
     =======
+    You have 3 chances left. 
     """)
 
 def larm():
     print ("""
     +---+
     |   O
-    |  \|/
+    |  \\|/
     |
     |
     =======
+    You have 2 chances left.
     """)
 
 def lleg():
     print ("""
     +---+
     |   O
-    |  \|/
+    |  \\|/
     |  /
     |
     =======
+    Oh no, you have 1 chance left! 
     """)
 
 def rleg():
@@ -65,7 +70,7 @@ def rleg():
     +---+
     |   O
     |  \|/
-    |  / \
+    |  /\\
     |
     =======
     You Lose!
