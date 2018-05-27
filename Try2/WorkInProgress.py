@@ -1,12 +1,21 @@
 #! /usr/local/bin/python3
-import os
+import os 
+import time
+
 SecureWord=[]
 word= input ("Player 1: Please enter the word!").lower()
 lw= len(word)
 SecureWord=list(word)
-# os.system('clear')
+os.system('clear')
+print ("You can now pass keyboard to player 2.")
+for i in range(5,0,-1):
+    time.sleep(1)
+    print (i)
+#time.sleep(5)
+os.system('clear')
 
-### Hands off to Player 2 
+### add a wait time for passing to player2 
+
 print (""" Welcome to Hangman!  
              +---+
              |
@@ -26,11 +35,10 @@ while turn < 6:
     if guess == word:
      print ("YAYA! You win!")
      exit()
-    elif guess in (word):
-        print (guess + " is in the word!")
-        if guess in SecureWord:
-            print (SecureWord.index(guess))
-
+    elif guess in SecureWord:
+            print (guess +" is located in position: " + str(SecureWord.index(guess)))
+                
+## what about multiple letters?
     else:
         print (guess + " is not in the word!")
         turn+=1
