@@ -6,9 +6,10 @@ SecureWord=[]
 word= input ("Player 1: Please enter the word!").lower()
 lw= len(word)
 SecureWord=list(word)
+SecureList=[]
 os.system('clear')
 print ("You can now pass keyboard to player 2.")
-for i in range(5,0,-1):
+for i in range(3,0,-1):
     time.sleep(1)
     print (i)
 #time.sleep(5)
@@ -26,25 +27,24 @@ print (""" Welcome to Hangman!
              
               """)
 print("The word has " + str(lw) + " letters.")
-print ("_ "*len(word))
+print ("_"*len(word))
 
 ### Decouple this section for guess function/class 
 turn =0
 lguessed=[]
-hint=[l if l in SecureWord else "_" for l in SecureWord]
+
 while turn < 6:
     guess = input ("Player 2: You can now guess the word or guess a Letter. \n What is your guess?").lower()
     if guess == word:
      print ("YAYA! You win!")
      exit()
     elif guess in SecureWord:
-            print (guess +" is located in position: " + str(SecureWord.index(guess)))
             lguessed.append(guess)
-            print("Letters in word are: " +str(lguessed))
-            print SecureWord.sort(word)
-            ### Trying to print out hint 
-            #print(" ").join(letter if letter in SecureWord else '_' for c in word)
-            if lguessed == SecureWord:
+            location=int(SecureWord.index(guess))
+            print (guess +" is located in position: " + str(location))
+            SecureList.insert(location,guess)
+            print (str(SecureList))
+            if SecureList == SecureWord:
                 print ("YAYA! You Win! The word was " +str(word) +".")
                 exit()
                 
