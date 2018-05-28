@@ -30,6 +30,8 @@ print ("_ "*len(word))
 
 ### Decouple this section for guess function/class 
 turn =0
+lguessed=[]
+hint=[l if l in SecureWord else "_" for l in SecureWord]
 while turn < 6:
     guess = input ("Player 2: You can now guess the word or guess a Letter. \n What is your guess?").lower()
     if guess == word:
@@ -37,6 +39,14 @@ while turn < 6:
      exit()
     elif guess in SecureWord:
             print (guess +" is located in position: " + str(SecureWord.index(guess)))
+            lguessed.append(guess)
+            print("Letters in word are: " +str(lguessed))
+            print SecureWord.sort(word)
+            ### Trying to print out hint 
+            #print(" ").join(letter if letter in SecureWord else '_' for c in word)
+            if lguessed == SecureWord:
+                print ("YAYA! You Win! The word was " +str(word) +".")
+                exit()
                 
 ## what about multiple letters?
     else:
