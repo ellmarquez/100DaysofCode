@@ -2,21 +2,24 @@
 import os 
 import time
 
+## list to be used
 SecureWord=[]
+
+
+## Ready Player 1 
 word= input ("Player 1: Please enter the word!").lower()
-lw= len(word)
 SecureWord=list(word)
-SecureList=[]
+SecureList=["_"]*len(word)
 os.system('clear')
+
+#Helps provide transition time between players 
 print ("You can now pass keyboard to player 2.")
 for i in range(3,0,-1):
     time.sleep(1)
     print (i)
-#time.sleep(5)
 os.system('clear')
 
-### add a wait time for passing to player2 
-
+##Ready Player 2 
 print (""" Welcome to Hangman!  
              +---+
              |
@@ -26,23 +29,24 @@ print (""" Welcome to Hangman!
              ======= 
              
               """)
-print("The word has " + str(lw) + " letters.")
+print("The word has " + str(len(word)) + " letters.")
 print ("_"*len(word))
 
-### Decouple this section for guess function/class 
-turn =0
-lguessed=[]
 
+### Decouple this section for guess function/class 
+## Handles player 2 guesses 
+turn =0
 while turn < 6:
     guess = input ("Player 2: You can now guess the word or guess a Letter. \n What is your guess?").lower()
     if guess == word:
      print ("YAYA! You win!")
      exit()
     elif guess in SecureWord:
-            lguessed.append(guess)
             location=int(SecureWord.index(guess))
             print (guess +" is located in position: " + str(location))
-            SecureList.insert(location,guess)
+            for (i, character) in enumerate(SecureWord):
+                if character==guess:
+                    SecureList[int(location)]=guess 
             print (str(SecureList))
             if SecureList == SecureWord:
                 print ("YAYA! You Win! The word was " +str(word) +".")
