@@ -42,8 +42,6 @@ while turn < 6:
      print ("YAYA! You win!")
      exit()
     elif guess in SecureWord:
-            #location=int(SecureWord.index(guess))
-            #print (guess +" is located in position: " + str(location))
             for (location, character) in enumerate(SecureWord):
                 if character==guess:
                     print (guess +" is located in position: " + str(location))
@@ -52,8 +50,6 @@ while turn < 6:
             if SecureList == SecureWord:
                 print ("YAYA! You Win! The word was " +str(word) +".")
                 exit()
-                
-## what about multiple letters?
     else:
         print (guess + " is not in the word!")
         turn+=1
